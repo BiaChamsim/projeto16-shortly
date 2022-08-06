@@ -9,13 +9,13 @@ export async function signUp(req, res){
     try{
         const {name, email, password} = req.body;
 
-        const existingEmail = await db.query(
+        const userData = await db.query(
             `SELECT * FROM USERS 
             WHERE email = $1`, 
             [email]
         )
 
-        if(existingEmail.rows.length !== 0){
+        if(userData.rows.length !== 0){
             return res.sendStatus(409);
         }
 
