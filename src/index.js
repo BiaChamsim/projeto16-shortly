@@ -3,7 +3,9 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 
 import authRouter from "./routes/authRouter.js";
-import urlsRouter from "./routes/urlsRouter.js"
+import urlsRouter from "./routes/urlsRouter.js";
+import usersRouter from "./routes/usersRouter.js";
+import rankingRouter from "./routes/rankingRouter.js";
 
 const app = express();
 
@@ -13,6 +15,8 @@ app.use(json());
 
 app.use(authRouter);
 app.use(urlsRouter);
+app.use(usersRouter);
+app.use(rankingRouter);
 
 const PORT = process.env.PORT || 5000;
 
