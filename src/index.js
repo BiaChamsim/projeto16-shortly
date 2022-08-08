@@ -21,5 +21,5 @@ app.use(rankingRouter);
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
-    console.log('servidor funfando!!')
+    console.log("Server running on port" + process.env.PORT)
 });
